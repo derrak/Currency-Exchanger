@@ -13,19 +13,17 @@
         </div>
         <label for="conversion-options">Convert to:</label>
         <select class="form-control" id="convertToCountry">
-          <option>United Kingdom | Pound Sterling (BGP)</option>
-          <option>Canada | Canadian Dollar (CAD)</option>
-          <option>Mexico | Peso (MXN)</option>
-          <option>European Union | Euro (EUR)</option>
-          <option>South Korea |	South Korean Won (KRW)</option>
-          <option>Error: lets you see how erroes are handled</option>
+          <option value="GBP">United Kingdom | Pound Sterling (GBP)</option>
+          <option value="CAD">Canada | Canadian Dollar (CAD)</option>
+          <option value="MXN">Mexico | Peso (MXN)</option>
+          <option value="EUR">European Union | Euro (EUR)</option>
+          <option value="KRW">South Korea |	South Korean Won (KRW)</option>
+          <option value="ZZZ">Error: lets you see how erroes are handled</option>
         </select>
         <button class="btn-convert" id="btn-convert">Convert!</button>
-        <div class="conversion-result"></div>
-        <div class="show-errors"></div>
       </form>
       <div class="result"></div>
-      <div class="error-result"></div>
+      <div class="showErrors"></div>
     </div>
   </body>
 </html>
