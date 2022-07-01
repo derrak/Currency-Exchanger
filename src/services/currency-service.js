@@ -1,8 +1,8 @@
 
 export default class CurrencyExchangeRate {  
-  static getWeather(city) {
+  static getConversionValue(baseCurrency, targetCurrency, valueToConvert) {
     // return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${baseCurrency}/${targetCurrency}/${amount}`)
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${baseCurrency}/${targetCurrency}/${valueToConvert}`)
       .then(function(response) {
         if (!response.ok) {
           throw Error(response.statusText);
@@ -11,7 +11,7 @@ export default class CurrencyExchangeRate {
       })
       .catch(function(error) {
         return Error(error);
-      })
+      });
   }
 }
 
@@ -32,4 +32,4 @@ export default class CurrencyExchangeRate {
 // 	"target_code": "GBP",
 // 	"conversion_rate": 0.8412,
 // 	"conversion_result": 5.8884
-// }
+// }git 
