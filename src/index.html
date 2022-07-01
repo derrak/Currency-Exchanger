@@ -11,21 +11,21 @@
           <label for="amount">Please enter amount in USD $:</label>
           <input type="number" class="form-control" id="value1" placeholder="1002.56">
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Convert to:</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>United Kingdom | Pound Sterling (BGP)</option>
-            <option>Canada | Canadian Dollar (CAD)</option>
-            <option>Mexico | Peso (MXN)</option>
-            <option>European Union | Euro (EUR)</option>
-            <option>South Korea |	South Korean Won (KRW)</option>
-            <option>Error: lets you see how erroes are handled</option>
-          </select>
-          <button class="btn-convert" id="btn-convert">Convert!</button>
-          <div class="conversion-result"></div>
-          <div class="show-errors"></div>
-        </div>
+        <label for="conversion-options">Convert to:</label>
+        <select class="form-control" id="convertToCountry">
+          <option>United Kingdom | Pound Sterling (BGP)</option>
+          <option>Canada | Canadian Dollar (CAD)</option>
+          <option>Mexico | Peso (MXN)</option>
+          <option>European Union | Euro (EUR)</option>
+          <option>South Korea |	South Korean Won (KRW)</option>
+          <option>Error: lets you see how erroes are handled</option>
+        </select>
+        <button class="btn-convert" id="btn-convert">Convert!</button>
+        <div class="conversion-result"></div>
+        <div class="show-errors"></div>
       </form>
+      <div class="result"></div>
+      <div class="error-result"></div>
     </div>
   </body>
 </html>
