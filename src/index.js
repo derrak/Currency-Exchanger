@@ -5,14 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchangeRate from './services/currency-service.js';
 
-// function clearFields() {
-//   $('#value1').val("");
-//   $('.show-errors').text("");
-// }
+function clearFields() {
+  $('#value1').val("");
+  $('.show-errors').text("");
+}
 
 function getElements(response) {
-  if (response.main) {
-    $('.conversion-result').text(`The value is ${response.conversion_result}`);
+  if (response.conversion_result) {
+    $('.result').text(`The value is ${response.conversion_result}`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
@@ -20,17 +20,20 @@ function getElements(response) {
 
 async function makeApiCall(baseCurrency,targetCurrency,valueToConvert) {
   const response = await CurrencyExchangeRate.getConversionValue(baseCurrency,targetCurrency,valueToConvert);
-  console.log(response.conversion_result);
   getElements(response);
 }
 
 $(document).ready(function() {
   $('#btn-convert').click(function() {
+    event.preventDefault();
+    clearFields()
     let baseCurrency = "USD";    
-    let targetCurrency = $('#convertToCountry').val();
-    let valueToConvert = $('#value1').val();
+    // let targetCurrency = $('#convertToCountry').val();
+    let targetCurrency = "CAD";
+    // let valueToConvert = $('#value1').val();
+    let valueToConvert = "88888888";
     // clearFields();
-    makeApiCall(baseCurrency, targetCurrency, valueToConvert);
+    makeApiCall(baseCurrency,targetCurrency,valueToConvert);
   });
 });
 
