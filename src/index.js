@@ -8,12 +8,12 @@ import CurrencyExchangeRate from './services/currency-service.js';
 function clearFields() {
   $('#value1').val("");
   $('.result').text("");
-  $('.show-errors').text("");
+  $('.showErrors').text("");
 }
 
 function getElements(response) {
   if (response.conversion_result) {
-    $('.result').text(`The value is ${response.conversion_result}`);
+    $('.result').text(`The value in ${response.target_code} is ${response.conversion_result}`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
